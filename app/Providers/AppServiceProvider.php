@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Observers\RestaurantObserver;
+use App\Restaurant;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -10,8 +11,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        RestaurantObserver::observe(RestaurantObserver::class);
-
+        Restaurant::observe(RestaurantObserver::class);
     }
     /**
      * Register any application services.
